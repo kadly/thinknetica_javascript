@@ -186,12 +186,11 @@ function makeTime(hours, minutes) {
    * @returns boolean успешна ли регистрация
    */
   function eRegistration(ticketNumber, fullName, timeNow) {
-    //validateTicketNumber(ticketNumber);
-    
+      
     const flight = getFlight(ticketNumber);
   
     const tickets = flight.tickets;
-  
+    
     if (!flight) throw new Error('Flight not found');
     if (tickets.findIndex(item => item.id == ticketNumber) < 0)
       throw new Error('Ticket not found');
@@ -200,6 +199,7 @@ function makeTime(hours, minutes) {
         purchasedTicket => purchasedTicket.id == ticketNumber
     )
   
+    if (!ticket.id) throw new Error('Ticket not found');
     if (ticket.fullName !== fullName)
       throw new Error('Invalid full name');
   
@@ -239,24 +239,21 @@ function makeTime(hours, minutes) {
    */
   function flightReport(flight, timeNow) {
       //let report = {};
-      let flightObject = {};
+     /* let flightObject = {};*/
       if (!flights[flight]) throw new Error ('Flight not found');
+    
       flightObject = flights[flight];
     
-      const registration = (timeNow > flight.registrationStarts && timeNow < flight.registrationEnds);
+      const registration = (timeNow > flight.registrationStarts
+                            && timeNow < flight.registrationEnds);
   
       const complete = timeNow > flightObject.registrationEnds;
     
-        const reservedSeats = flightObject.tickets.length;
+      const reservedSeats = flightObject.tickets.length;
     
       const countOfSeats = flightObject.seats;
     
-      let registeredSeats = 0;
-      flightObject.tickets.forEach(ticket => {
-          if (ticket.registrationTime) {
-              ++registeredSeats
-          }
-      })
+      const registeredSeats = flightObject.tickets.filter(item => item.registrationTime).length;
   
       return {
           flight,
