@@ -238,8 +238,7 @@ function makeTime(hours, minutes) {
    * @returns {Report} отчет
    */
   function flightReport(flight, timeNow) {
-      //let report = {};
-     /* let flightObject = {};*/
+
       if (!flights[flight]) throw new Error ('Flight not found');
     
       flightObject = flights[flight];
