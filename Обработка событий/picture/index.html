@@ -1,0 +1,161 @@
+<!--Доработать графический редактор, начатый на занятии
+    Увеличить поле
+    Добавить возможность выбора цвета -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>events</title>
+    <style>
+        table {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+        }
+
+        table tr td {
+            width: 10px;
+            height: 10px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table cellspacing="0" cellpadding="0">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <p>Choose color:</p>
+    <div id="palette">
+        <div style="height:0;width:2%;padding-bottom:2%;background-color:green" data-code="green"></div>
+        <br>
+        <div style="height:0;width:2%;padding-bottom:2%;background-color:yellow" data-code="yellow"></div>
+        <br>
+        <div style="height:0;width:2%;padding-bottom:2%;background-color:red" data-code="red"></div>
+        <br>
+        <div style="height:0;width:2%;padding-bottom:2%;background-color:blue" data-code="blue"></div>
+    </div>
+
+    <script>
+        'use strict';
+        const table = document.getElementsByTagName('table')[0];
+        const palette = document.getElementById('palette');
+        let color = 'black';
+
+        table.addEventListener('click', clickOnTable);
+        palette.addEventListener('click', clickOnPalette);
+
+        function clickOnPalette(event) {
+            console.log(event.type, event.target);
+            color = event.target.dataset.code;
+            console.log(color);
+        }
+
+        /**
+         * @param {MouseEvent} event
+         */
+        function clickOnTable(event) {
+
+            console.log(event.type, event.target);
+
+            if (event.target.tagName !== 'TD')
+                return;
+
+
+            if (event.shiftKey)
+                event.target.style.backgroundColor = 'transparent';
+            else if (event.ctrlKey)
+                event.target.style.backgroundColor = 'blue';
+            else
+                event.target.style.backgroundColor = color;
+
+            // console.log(this);
+            // console.log(event.offsetX, event.offsetY)
+            console.log(event.target.dataset.code);
+        }
+    </script>
+
+</body>
+
+</html>
