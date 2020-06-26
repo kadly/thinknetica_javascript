@@ -1,11 +1,6 @@
 /* Вывести в консоль иерархическую структуру документа, так, как это показано на практической части.
 Реализовать 3 функции, выполняющие это разными способами */
 
-const showTreeOne = function () {
-
-}
-
-
 function showTreeOne() {
   let allNode = document.querySelectorAll('*');
   console.log(allNode);
