@@ -20,7 +20,7 @@ console.log(shipOne);
 const shipTwo = new Ship('Good ship 2');
 
 
-// Whrfs
+// Wharfs
 const wharfOne = new Wharf ({x: 4, y: 5});
 
 console.log(wharfOne);
