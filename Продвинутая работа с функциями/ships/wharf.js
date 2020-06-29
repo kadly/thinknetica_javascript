@@ -18,7 +18,9 @@ function Wharf (position) {
   this.unmoor = function (ship) {
     if (!this.mooredShips.includes(ship))
             throw new Error(`${ship.name} is not at the wharf.`);
-    this.mooredShips.pop(ship);
+    let thisShip = this.mooredShips.filter(item => item == ship);
+    let indexOfThisShip = this.mooredShips.indexOf(thisShip);
+    let removedShip = this.mooredShips.splice(indexOfThisShip,1);
     ship.raiseAnchor();
     console.log(`${ship.name} is successfully unmoored.`);
   }
