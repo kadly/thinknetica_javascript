@@ -17,6 +17,6 @@ function Group(number) {
 
   this.lackedStudents = function () {
     console.log('Lacked students: ','\n');
-    return this.students.filter(student => !student.studentPresence() == false);
+    return this.students.filter(student => !student.studentPresence());
   }
 };
