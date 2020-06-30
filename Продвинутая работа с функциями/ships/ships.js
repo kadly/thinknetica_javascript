@@ -43,7 +43,7 @@ function Ship (name, model) {
                 console.log('Ship has been successfully moved to E');
                 break;
             default:
-                console.log('Error');
+                throw new Error(`Invalid direction "${direction}"`);
         }
         this.distance += 1;
     };
