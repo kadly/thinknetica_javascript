@@ -1,8 +1,8 @@
 'use strict';
 
 function MotorShip(parameters) {
-    this.name = name;
-    this.model = model;
+    this.name = parameters.name;
+    this.model = parameters.model;
     this.motorPerformance = parameters.motorPerformance;
     this.bodyMaterial = parameters.bodyMaterial;
 }
@@ -24,4 +24,4 @@ console.log('Является ли motorShipOne экземпляром Ship? ' +
 
 console.log(motorShipOne);
 
-console.log('name: ' + motorShipOne.name, ',', 'model: ' + motorShipOne.model, motorShipOne.motorPerformance, motorShipOne.bodyMaterial);
+console.log('name: ' + motorShipOne.name, ',', 'model: ' + motorShipOne.model, ',', 'motorPerformance: ' + motorShipOne.motorPerformance, ',', 'bodyMaterial: ' + motorShipOne.bodyMaterial);
