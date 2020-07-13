@@ -1,10 +1,6 @@
 'use strict';
 
-function Shipyard(position, typeOfShip) {
-  this.position = {
-    x: position.x,
-    y: position.y
-  }
+function Shipyard(typeOfShip) {
   // this.mooredShips = [];
 
   // this.moor = function (ship) {
@@ -42,7 +38,8 @@ function Shipyard(position, typeOfShip) {
     }
   }
 
-  this.build = function(shipType, params) {
-    
-  }
+  // this.build = function(shipType, params) {
+
+  // }
+  Shipyard.prototype = new Wharf();
 }
