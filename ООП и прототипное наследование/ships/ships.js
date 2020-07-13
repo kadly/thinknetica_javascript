@@ -1,9 +1,11 @@
 'use strict';
 
-function Ship (name, model) {
+function Ship (name, model, color) {
     let _isAnchorDroped = false;
+    let _atTheShipyard = false;
     this.name = name;
     this.model = model;
+    this.color = color;
     this.distance = 0;
     this.position = {
         x: 0,
@@ -52,6 +54,11 @@ function Ship (name, model) {
         console.log('isAnchorDroped', this);
         return _isAnchorDroped;
     };
+    
+    this.atTheShipyard = function () {
+        console.log('atTheShipyard', this);
+        return _atTheShipyard;
+    };
 
     /**
      * @param {boolean} droped
@@ -59,15 +66,21 @@ function Ship (name, model) {
     this.dropAnchor = () => {
         if (this.speed !== 0)
             throw new Error('Speed must be 0');
-
         _isAnchorDroped = true;
     };
 
     this.raiseAnchor = () => {
         if (this.speed !== 0)
             throw new Error('Speed must be 0');
-
         _isAnchorDroped = false;
+    };
+
+    this.goToShipyard = () => {
+        _atTheShipyard = true;
+    };
+
+    this.getOutOfShipyard = () => {
+        _atTheShipyard = false;
     };
 }
 
