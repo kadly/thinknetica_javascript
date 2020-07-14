@@ -1,25 +1,10 @@
 'use strict';
 
-function Shipyard(typeOfShip) {
-  // this.mooredShips = [];
-
-  // this.moor = function (ship) {
-  //   if (this.mooredShips.includes(ship))
-  //           throw new Error(`${ship.name} is already moored.`);
-  //   this.mooredShips.push(ship);
-  //   ship.dropAnchor();
-  //   console.log(`${ship.name} is successfully moored.`);
-  // }
-
-  // this.unmoor = function (ship) {
-  //   if (!this.mooredShips.includes(ship))
-  //           throw new Error(`${ship.name} is not at the wharf.`);
-  //   let thisShip = this.mooredShips.filter(item => item == ship);
-  //   let indexOfThisShip = this.mooredShips.indexOf(thisShip);
-  //   let removedShip = this.mooredShips.splice(indexOfThisShip,1);
-  //   ship.raiseAnchor();
-  //   console.log(`${ship.name} is successfully unmoored.`);
-  // }
+function Shipyard(position, typeOfShip) {
+  this.position = {
+    x: position.x,
+    y: position.y
+  }
 
   this.colorize = function(ship, color) {
     // if (!_atTheShipyard)
@@ -38,8 +23,9 @@ function Shipyard(typeOfShip) {
     }
   }
 
-  // this.build = function(shipType, params) {
+  // this.build = function(typeOfShip, params) {
 
   // }
-  Shipyard.prototype = new Wharf();
 }
+
+Shipyard.prototype = new Wharf();
