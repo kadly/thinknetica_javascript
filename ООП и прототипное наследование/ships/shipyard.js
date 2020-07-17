@@ -26,6 +26,20 @@ function Shipyard(position, typeOfShip) {
   // this.build = function(typeOfShip, params) {
 
   // }
+  function shipFactory() {
+    this.createShip = function (typeOfShip) {
+      var ship;
+      switch(typeOfShip) {
+        case 'motorship':
+          ship = new MotorShip;
+          break;
+        case 'sailingship':
+          ship = new SailingShip;
+          break;
+      }
+      return ship;
+    }
+  }
 }
 
 Shipyard.prototype = new Wharf();

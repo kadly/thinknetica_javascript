@@ -8,5 +8,7 @@ function MotorShipShipyard(typeOfShip, position) {
     }
 }
 
-MotorShipShipyard.prototype = Object.create(Shipyard.prototype);
-MotorShipShipyard.prototype.constructor = MotorShipShipyard;
+// MotorShipShipyard.prototype = Object.create(Shipyard.prototype);
+// MotorShipShipyard.prototype.constructor = MotorShipShipyard;
+// or just
+MotorShipShipyard.prototype = new Shipyard();
