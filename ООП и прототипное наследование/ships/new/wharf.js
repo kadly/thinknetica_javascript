@@ -1,21 +1,21 @@
 'use strict';
 
 //обменять корабль
-function swapShip(typeOfShip, name) {
+function SwapShip(typeOfShip, name) {
   
 }
 
 //покрасить корабль
-function dyeShip(name) {
+function DyeShip(name) {
   
 }
 
 //отремонтировать корабль
-function refitShip(typeOfShip, name) {
+function RefitShip(typeOfShip, name) {
   
 }
 
 //построить корабль
-function buildShip(typeOfShip, name) {
+function BuildShip(typeOfShip, name) {
   
 }
